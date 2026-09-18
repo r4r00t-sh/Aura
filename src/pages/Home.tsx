@@ -16,7 +16,7 @@ import Testimonials from "../components/Testimonials";
 import FaqTeaser from "../components/FaqAccordion";
 import { FLEET } from "../data/fleet";
 import { EMPTY_LEGS } from "../data/emptyLegs";
-import { LOGO_ALT, LOGO_SRC } from "../data/brand";
+import { LOGO_ALT } from "../data/brand";
 import { buildEstimate, type EstimateResult } from "../lib/estimate";
 import type { NavigateFn } from "../lib/nav";
 
@@ -273,13 +273,10 @@ export default function Home({ onNavigate }: HomeProps) {
 
             <div className="flex justify-center lg:justify-end">
               <img
-                src={LOGO_SRC}
+                src="/images/logo_1.png"
                 alt={LOGO_ALT}
-                className="w-[min(100%,22rem)] md:w-[min(100%,28rem)] lg:w-[min(100%,32rem)] h-auto object-contain"
-                style={{
-                  borderRadius: "1.25rem",
-                  boxShadow: "0 16px 48px rgba(0,0,0,0.4)",
-                }}
+                className="w-[min(100%,16rem)] md:w-[min(100%,20rem)] lg:w-[min(100%,24rem)] h-auto object-contain"
+                style={{ background: "transparent" }}
               />
             </div>
           </div>
