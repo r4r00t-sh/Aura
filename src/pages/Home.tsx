@@ -291,6 +291,14 @@ export default function Home({ onNavigate }: HomeProps) {
           marginBottom: "1.5rem",
         }}
       >
+          {/* Opacity-only reveal — any transform on this wrapper breaks backdrop-filter in Chromium/Vercel */}
+          <div
+            style={{
+              transition: "opacity 0.8s ease",
+              opacity: heroLoaded ? 1 : 0,
+              transitionDelay: "0.3s",
+            }}
+          >
           <div
             className="glass p-6 md:p-8"
             style={{
@@ -298,10 +306,9 @@ export default function Home({ onNavigate }: HomeProps) {
               border: "1px solid rgba(255,255,255,0.55)",
               boxShadow:
                 "0 4px 12px rgba(7,20,38,0.06), 0 18px 48px rgba(7,20,38,0.14)",
-              transition: "all 0.8s ease",
-              opacity: heroLoaded ? 1 : 0,
-              transform: heroLoaded ? "translateY(0)" : "translateY(20px)",
-              transitionDelay: "0.3s",
+              WebkitBackdropFilter: "blur(18px) saturate(1.2)",
+              backdropFilter: "blur(18px) saturate(1.2)",
+              background: "rgba(255, 255, 255, 0.72)",
             }}
           >
             <div className="flex items-center justify-between gap-4 mb-6">
@@ -476,6 +483,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 </button>
               </div>
             )}
+          </div>
           </div>
       </div>
 
