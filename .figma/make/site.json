@@ -1,0 +1,10 @@
+{
+  "description": "Offers a luxurious private jet charter platform from Dubai with easy booking, fleet browsing, and exclusive empty leg flight options for discerning travelers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
