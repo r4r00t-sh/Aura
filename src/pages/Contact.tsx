@@ -408,9 +408,11 @@ export default function Contact({ initial, onConsumed, onNavigate }: ContactProp
                   }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLButtonElement).style.background = "var(--color-gold)";
+                    (e.currentTarget as HTMLButtonElement).style.color = "var(--color-royal)";
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLButtonElement).style.background = "var(--color-blue)";
+                    (e.currentTarget as HTMLButtonElement).style.color = "var(--color-white)";
                   }}
                 >
                   Send Message →

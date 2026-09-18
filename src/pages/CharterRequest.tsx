@@ -410,7 +410,11 @@ export default function CharterRequest({
                           : i < step
                           ? "none"
                           : "1px solid rgba(200,169,107,0.35)",
-                        color: i <= step ? "var(--color-ink)" : "var(--color-gray)",
+                        color: i === step
+                          ? "var(--color-white)"
+                          : i < step
+                          ? "var(--color-royal)"
+                          : "var(--color-gray)",
                         fontSize: "9px",
                         transition: "all 0.3s ease",
                       }}
@@ -901,7 +905,7 @@ export default function CharterRequest({
                           background: aircraft_pref === ac.name ? "var(--color-blue)" : "transparent",
                           borderRadius: "50%",
                           fontSize: "10px",
-                          color: "var(--color-ink)",
+                          color: aircraft_pref === ac.name ? "var(--color-white)" : "var(--color-ink)",
                         }}
                       >
                         {aircraft_pref === ac.name && "✓"}

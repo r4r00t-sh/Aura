@@ -126,7 +126,11 @@ export default function Fleet({ onNavigate }: FleetProps) {
                   style={{
                     fontFamily: "var(--font-display)",
                     background: ac.tagColor,
-                    color: ac.tag === "Available" ? "var(--color-gray)" : "var(--color-ink)",
+                    color: ac.tag === "Available"
+                      ? "var(--color-gray)"
+                      : ac.tag === "Most Popular"
+                        ? "var(--color-white)"
+                        : "var(--color-ink)",
                     fontSize: "9px",
                   }}
                 >
@@ -187,11 +191,12 @@ export default function Fleet({ onNavigate }: FleetProps) {
                     className="flex-1 py-3 text-xs tracking-[0.2em] uppercase font-bold"
                     style={{
                       fontFamily: "var(--font-display)",
-                      color: "var(--color-white)",
+                      color:
+                        hoveredIdx === i ? "var(--color-royal)" : "var(--color-white)",
                       background: hoveredIdx === i ? "var(--color-gold)" : "var(--color-blue)",
                       border: "none",
                       cursor: "pointer",
-                      transition: "background 0.3s ease",
+                      transition: "background 0.3s ease, color 0.3s ease",
                     }}
                   >
                     Charter this aircraft

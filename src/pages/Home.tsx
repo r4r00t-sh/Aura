@@ -584,7 +584,11 @@ export default function Home({ onNavigate }: HomeProps) {
                   style={{
                     fontFamily: "var(--font-display)",
                     background: ac.tag === "Flagship" ? "var(--color-gold)" : ac.tag === "Most Popular" ? "var(--color-aqua)" : "rgba(250,248,244,0.95)",
-                    color: ac.tag === "Available" ? "var(--color-gray)" : "var(--color-ink)",
+                    color: ac.tag === "Available"
+                      ? "var(--color-gray)"
+                      : ac.tag === "Most Popular"
+                        ? "var(--color-white)"
+                        : "var(--color-ink)",
                   }}
                 >
                   {ac.tag}

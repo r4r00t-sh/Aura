@@ -287,7 +287,7 @@ export default function Destinations({ onNavigate }: { onNavigate: NavigateFn })
                     fontSize: "9px",
                     letterSpacing: "0.2em",
                     textTransform: "uppercase",
-                    color: hovered === i ? "var(--color-ink)" : "var(--color-gray)",
+                    color: hovered === i ? "var(--color-white)" : "var(--color-gray)",
                     background: hovered === i ? "var(--color-blue)" : "transparent",
                     border: "1px solid rgba(200,169,107,0.35)",
                     cursor: "pointer",
