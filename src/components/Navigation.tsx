@@ -35,19 +35,19 @@ export default function Navigation({ currentPage, onNavigate }: NavProps) {
   };
 
   const elevated = scrolled || menuOpen || currentPage !== "home";
-  const linkIdle = elevated ? "rgba(247,248,250,0.72)" : "rgba(247,248,250,0.85)";
-  const linkActive = "var(--color-champagne)";
+  const linkIdle = "#FFFFFF";
+  const linkActive = "var(--color-gold)";
   const ctaStyle: CSSProperties = {
     fontFamily: "var(--font-display)",
-    fontSize: "10px",
-    letterSpacing: "0.18em",
+    fontSize: "11px",
+    letterSpacing: "0.16em",
     textTransform: "uppercase",
     color: "var(--color-royal)",
     background: "var(--color-gold)",
     border: "none",
     cursor: "pointer",
     padding: "10px 18px",
-    fontWeight: 600,
+    fontWeight: 700,
     borderRadius: "999px",
     transition: "background 0.3s ease, color 0.3s ease",
   };
@@ -94,7 +94,7 @@ export default function Navigation({ currentPage, onNavigate }: NavProps) {
             />
           </button>
 
-          <div className="hidden lg:flex items-center gap-5 xl:gap-6 min-w-0">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-5 min-w-0">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
@@ -103,17 +103,20 @@ export default function Navigation({ currentPage, onNavigate }: NavProps) {
                 className="underline-hover"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "10px",
-                  letterSpacing: "0.12em",
+                  fontSize: "11.5px",
+                  letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   color: currentPage === link.id ? linkActive : linkIdle,
-                  fontWeight: currentPage === link.id ? 600 : 400,
+                  fontWeight: currentPage === link.id ? 700 : 500,
                   transition: "color 0.3s ease",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
                   padding: "4px 0",
                   whiteSpace: "nowrap",
+                  textShadow: elevated
+                    ? "0 1px 2px rgba(0,0,0,0.35)"
+                    : "0 1px 8px rgba(0,0,0,0.45)",
                 }}
               >
                 {link.label}
@@ -187,14 +190,14 @@ export default function Navigation({ currentPage, onNavigate }: NavProps) {
                 className="text-left"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "12px",
-                  letterSpacing: "0.18em",
+                  fontSize: "13px",
+                  letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   color:
                     currentPage === link.id
-                      ? "var(--color-champagne)"
-                      : "rgba(247,248,250,0.75)",
-                  fontWeight: currentPage === link.id ? 600 : 400,
+                      ? "var(--color-gold)"
+                      : "#FFFFFF",
+                  fontWeight: currentPage === link.id ? 700 : 600,
                   background: "none",
                   border: "none",
                   cursor: "pointer",

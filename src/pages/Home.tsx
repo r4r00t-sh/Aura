@@ -16,6 +16,7 @@ import Testimonials from "../components/Testimonials";
 import FaqTeaser from "../components/FaqAccordion";
 import { FLEET } from "../data/fleet";
 import { EMPTY_LEGS } from "../data/emptyLegs";
+import { LOGO_ALT, LOGO_SRC } from "../data/brand";
 import { buildEstimate, type EstimateResult } from "../lib/estimate";
 import type { NavigateFn } from "../lib/nav";
 
@@ -217,56 +218,70 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
         <div className="relative z-10 max-w-screen-xl mx-auto px-6 md:px-10 pt-28 md:pt-32 pb-28 md:pb-36 w-full">
           <div
-            className="transition-all duration-1000 max-w-2xl"
+            className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 lg:gap-12 items-center transition-all duration-1000"
             style={{
               opacity: heroLoaded ? 1 : 0,
               transform: heroLoaded ? "translateY(0)" : "translateY(30px)",
             }}
           >
-            <div
-              className="text-xs tracking-[0.4em] uppercase mb-5 flex items-center gap-3"
-              style={{ color: "var(--color-gold)", fontFamily: "var(--font-display)" }}
-            >
-              <span className="block w-8 h-px" style={{ background: "var(--color-gold)" }} />
-              Dubai charter broker
+            <div className="max-w-2xl">
+              <div
+                className="text-xs tracking-[0.4em] uppercase mb-5 flex items-center gap-3"
+                style={{ color: "var(--color-gold)", fontFamily: "var(--font-display)" }}
+              >
+                <span className="block w-8 h-px" style={{ background: "var(--color-gold)" }} />
+                Dubai charter broker
+              </div>
+              <h1
+                className="text-5xl md:text-7xl font-bold uppercase mb-5 leading-[0.95]"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  letterSpacing: "0.04em",
+                  color: "var(--color-white)",
+                }}
+              >
+                Aura Air
+                <br />
+                <span style={{ color: "var(--color-aqua)" }}>Charters</span>
+              </h1>
+              <p
+                className="text-base md:text-lg max-w-lg mb-9 leading-relaxed"
+                style={{ color: "rgba(247,248,250,0.78)", fontFamily: "var(--font-body)" }}
+              >
+                Aura arranges private and chartered aircraft for passenger and cargo —
+                through approved operators, from Dubai to anywhere.
+              </p>
+              <button
+                type="button"
+                onClick={() => onNavigate("charter")}
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "11px",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  fontWeight: 600,
+                  color: "var(--color-white)",
+                  background: "var(--color-royal)",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "16px 32px",
+                }}
+              >
+                Request a charter
+              </button>
             </div>
-            <h1
-              className="text-5xl md:text-7xl font-bold uppercase mb-5 leading-[0.95]"
-              style={{
-                fontFamily: "var(--font-display)",
-                letterSpacing: "0.04em",
-                color: "var(--color-white)",
-              }}
-            >
-              Arranged.
-              <br />
-              <span style={{ color: "var(--color-aqua)" }}>Not listed.</span>
-            </h1>
-            <p
-              className="text-base md:text-lg max-w-lg mb-9 leading-relaxed"
-              style={{ color: "rgba(247,248,250,0.78)", fontFamily: "var(--font-body)" }}
-            >
-              Aura arranges private and chartered aircraft for passenger and cargo —
-              through approved operators, from Dubai to anywhere.
-            </p>
-            <button
-              type="button"
-              onClick={() => onNavigate("charter")}
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "11px",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                fontWeight: 600,
-                color: "var(--color-white)",
-                background: "var(--color-royal)",
-                border: "none",
-                cursor: "pointer",
-                padding: "16px 32px",
-              }}
-            >
-              Request a charter
-            </button>
+
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src={LOGO_SRC}
+                alt={LOGO_ALT}
+                className="w-[min(100%,22rem)] md:w-[min(100%,28rem)] lg:w-[min(100%,32rem)] h-auto object-contain"
+                style={{
+                  borderRadius: "1.25rem",
+                  boxShadow: "0 16px 48px rgba(0,0,0,0.4)",
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
