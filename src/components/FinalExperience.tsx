@@ -81,10 +81,11 @@ export default function FinalExperience({
         opacity: 0.78,
         ease: "none",
         scrollTrigger: {
-          trigger: stage,
-          start: "top 88%",
-          end: "top 42%",
-          scrub: 1.75,
+          // Wait until the footer is well into view — not as soon as it peeks in
+          trigger: section,
+          start: "top 42%",
+          end: "top 8%",
+          scrub: 1.4,
           invalidateOnRefresh: true,
         },
       });
@@ -93,7 +94,7 @@ export default function FinalExperience({
         defaults: { ease: "power3.out" },
         scrollTrigger: {
           trigger: section,
-          start: "top 85%",
+          start: "top 38%",
           toggleActions: "play none none reverse",
         },
       });
@@ -160,18 +161,18 @@ export default function FinalExperience({
         {/* Hero-scale AURA — big & wide, clipped, GSAP scrub + Lenis */}
         <div
           ref={stageRef}
-          className="relative mx-auto mb-12 md:mb-16 overflow-hidden"
+          className="relative mx-auto mb-12 md:mb-16"
           style={{
             width: "min(99vw, 100rem)",
             ["--aura-size" as string]: "clamp(7.75rem, 22vw, 18rem)",
-            height: "calc(var(--aura-size) * 1.3)",
-            isolation: "isolate",
+            height: "calc(var(--aura-size) * 1.55)",
           }}
           aria-hidden="true"
         >
           <div
             ref={brandRef}
             className="absolute inset-0 flex items-center justify-center will-change-transform"
+            style={{ zIndex: 2 }}
           >
             <span
               className="uppercase select-none pointer-events-none whitespace-nowrap"
@@ -190,6 +191,27 @@ export default function FinalExperience({
             >
               AURA
             </span>
+          </div>
+
+          {/* Back clouds */}
+          <div className="aura-clouds aura-clouds--back" aria-hidden="true">
+            <span className="css-cloud css-cloud--xl css-cloud--back-1" />
+            <span className="css-cloud css-cloud--lg css-cloud--back-2" />
+            <span className="css-cloud css-cloud--md css-cloud--back-3" />
+            <span className="css-cloud css-cloud--sm css-cloud--back-4" />
+            <span className="css-cloud css-cloud--lg css-cloud--back-5" />
+            <span className="css-cloud css-cloud--md css-cloud--back-6" />
+          </div>
+
+          {/* Front clouds */}
+          <div className="aura-clouds aura-clouds--front" aria-hidden="true">
+            <span className="css-cloud css-cloud--lg css-cloud--front-1" />
+            <span className="css-cloud css-cloud--md css-cloud--front-2" />
+            <span className="css-cloud css-cloud--sm css-cloud--front-3" />
+            <span className="css-cloud css-cloud--xs css-cloud--front-4" />
+            <span className="css-cloud css-cloud--md css-cloud--front-5" />
+            <span className="css-cloud css-cloud--sm css-cloud--front-6" />
+            <span className="css-cloud css-cloud--xs css-cloud--front-7" />
           </div>
         </div>
 

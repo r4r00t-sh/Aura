@@ -186,3 +186,94 @@ body {
   border: 1px solid var(--color-border);
   color: var(--color-gray);
 }
+
+/* Footer AURA — soft wispy CSS clouds (wide fades, no discs / noise boxes) */
+.aura-clouds {
+  position: absolute;
+  inset: -14% -6%;
+  pointer-events: none;
+}
+
+.aura-clouds--back {
+  z-index: 1;
+}
+
+.aura-clouds--front {
+  z-index: 3;
+}
+
+.css-cloud {
+  position: absolute;
+  display: block;
+  /* Very soft multi-lobe mist — edges fully transparent */
+  background:
+    radial-gradient(ellipse 70% 55% at 18% 55%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 40%, transparent 68%),
+    radial-gradient(ellipse 65% 60% at 48% 40%, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.14) 42%, transparent 70%),
+    radial-gradient(ellipse 68% 52% at 78% 58%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 38%, transparent 66%),
+    radial-gradient(ellipse 50% 45% at 35% 72%, rgba(255, 255, 255, 0.28) 0%, transparent 62%),
+    radial-gradient(ellipse 45% 42% at 65% 70%, rgba(255, 255, 255, 0.24) 0%, transparent 60%);
+  filter: blur(22px) contrast(0.88) brightness(1.03);
+  opacity: 0.85;
+  mix-blend-mode: soft-light;
+  border-radius: 50%;
+}
+
+.css-cloud::before,
+.css-cloud::after {
+  content: none;
+}
+
+.css-cloud--xs {
+  width: clamp(7rem, 15vw, 11rem);
+  height: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.css-cloud--sm {
+  width: clamp(10rem, 20vw, 15rem);
+  height: clamp(4.5rem, 9vw, 7rem);
+}
+
+.css-cloud--md {
+  width: clamp(13rem, 26vw, 20rem);
+  height: clamp(5.5rem, 11vw, 9rem);
+}
+
+.css-cloud--lg {
+  width: clamp(16rem, 32vw, 26rem);
+  height: clamp(7rem, 14vw, 11rem);
+}
+
+.css-cloud--xl {
+  width: clamp(20rem, 40vw, 34rem);
+  height: clamp(8.5rem, 17vw, 14rem);
+}
+
+/* Denser bank (still soft — higher center opacity, more blur) */
+.css-cloud--lg.css-cloud--front-1,
+.css-cloud--md.css-cloud--front-5,
+.css-cloud--xl.css-cloud--back-1 {
+  background:
+    radial-gradient(ellipse 72% 58% at 20% 52%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.2) 44%, transparent 72%),
+    radial-gradient(ellipse 68% 62% at 50% 38%, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.22) 46%, transparent 74%),
+    radial-gradient(ellipse 70% 55% at 76% 55%, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.16) 40%, transparent 70%),
+    radial-gradient(ellipse 55% 48% at 40% 70%, rgba(255, 255, 255, 0.4) 0%, transparent 65%),
+    radial-gradient(ellipse 52% 45% at 62% 68%, rgba(255, 255, 255, 0.35) 0%, transparent 64%);
+  filter: blur(20px) contrast(0.9) brightness(1.05);
+  opacity: 0.92;
+  mix-blend-mode: normal;
+}
+
+.css-cloud--back-1 { left: 0%; top: 34%; transform: scale(1.12) rotate(-3deg); opacity: 0.7; filter: blur(28px) contrast(0.85); }
+.css-cloud--back-2 { right: 2%; top: 18%; transform: scale(0.95) rotate(4deg); opacity: 0.62; filter: blur(26px) contrast(0.86); }
+.css-cloud--back-3 { left: 32%; top: 52%; transform: scale(1.1); opacity: 0.5; filter: blur(30px) contrast(0.84); }
+.css-cloud--back-4 { right: 22%; top: 56%; transform: rotate(-6deg); opacity: 0.45; filter: blur(24px) contrast(0.86); }
+.css-cloud--back-5 { left: 14%; top: 14%; transform: scale(0.9) rotate(6deg); opacity: 0.55; filter: blur(25px) contrast(0.86); }
+.css-cloud--back-6 { right: 12%; top: 44%; transform: scale(1.08) rotate(-7deg); opacity: 0.48; filter: blur(27px) contrast(0.85); }
+
+.css-cloud--front-1 { left: 4%; top: 48%; transform: scale(0.92) rotate(2deg); mix-blend-mode: normal; }
+.css-cloud--front-2 { right: 6%; top: 14%; transform: scale(1.05) rotate(-5deg); opacity: 0.88; filter: blur(18px) contrast(0.9); mix-blend-mode: normal; }
+.css-cloud--front-3 { left: 40%; top: 10%; transform: rotate(3deg); opacity: 0.82; filter: blur(16px) contrast(0.9); mix-blend-mode: normal; }
+.css-cloud--front-4 { right: 30%; top: 62%; transform: scale(1.08) rotate(-2deg); opacity: 0.8; filter: blur(15px) contrast(0.9); mix-blend-mode: normal; }
+.css-cloud--front-5 { left: 24%; top: 56%; transform: scale(1.1) rotate(-4deg); mix-blend-mode: normal; }
+.css-cloud--front-6 { right: 18%; top: 38%; transform: scale(1.04) rotate(5deg); opacity: 0.88; filter: blur(17px) contrast(0.91); mix-blend-mode: normal; }
+.css-cloud--front-7 { left: 50%; top: 44%; transform: rotate(-7deg); opacity: 0.78; filter: blur(16px) contrast(0.9); mix-blend-mode: normal; }
